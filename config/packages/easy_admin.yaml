@@ -1,0 +1,19 @@
+easy_admin:
+  entities:
+    Product:
+      class: "App\\Entity\\Product"
+      list:
+        fields:
+          - name
+          - description
+          - updatedAt
+          - { property: 'imageName', type: 'image', base_path: '/images/products'}
+      show: 
+        fields:
+          - { property: 'imageName', type: 'image', base_path: '/images/products'}
+      form: 
+        fields: 
+          - name
+          - description
+          - { property: 'Price', type: 'money', type_options: { divisor: 100 }}
+          - { property: 'imageFile', type: 'vich_image' }
