@@ -4,16 +4,16 @@ easy_admin:
       class: "App\\Entity\\Product"
       list:
         fields:
+          - { property: 'imageName', type: 'image', base_path: '/images/products', label: 'image'}
           - name
           - description
           - updatedAt
-          - { property: 'imageName', type: 'image', base_path: '/images/products'}
       show: 
         fields:
-          - { property: 'imageName', type: 'image', base_path: '/images/products'}
+          - { property: 'imageName', type: 'image', base_path: '/images/products', label: 'image'}
       form: 
         fields: 
+          - { property: 'imageFile', type: 'vich_image', label: 'image' }
           - name
           - description
           - { property: 'Price', type: 'money', type_options: { divisor: 100 }}
-          - { property: 'imageFile', type: 'vich_image' }
